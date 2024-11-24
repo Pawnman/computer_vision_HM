@@ -1,8 +1,8 @@
 import cv2
 
-from task_3 import rotate
+from task_1_3 import rotate
 
-test_image = cv2.imread('img/testrose.jpg')
+test_image = cv2.imread('cv_hm_1.3/img/testrose.jpg')
 # test_image = cv2.cvtColor(test_image, cv2.COLOR_BGR2RGB)
 cv2.imshow("Original image", test_image)
 

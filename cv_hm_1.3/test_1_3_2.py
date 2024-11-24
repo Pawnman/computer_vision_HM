@@ -2,9 +2,9 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 
-from task_3 import apply_warpAffine
+from task_1_3 import apply_warpAffine
 
-image = cv2.imread('img/notebook.jpg')
+image = cv2.imread('cv_hm_1.3/img/notebook.jpg')
 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
 image_hsv = cv2.cvtColor(image, cv2.COLOR_RGB2HSV)
