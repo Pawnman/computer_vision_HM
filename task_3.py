@@ -59,7 +59,14 @@ def apply_warpAffine(image, points1, points2) -> np.ndarray:
     :param points2:
     :return: преобразованное изображение
     """
-    # Ваш код
-    pass
+    # Получаем матрицу перспективного преобразования
+    matrix_convert = cv2.getPerspectiveTransform(np.float32(points1), np.float32(points2))
 
-    return image
+    # Определяем размер нового изображения
+    width = int(max(points2[0][0], points2[1][0], points2[2][0], points2[3][0]))
+    height = int(max(points2[0][1], points2[1][1], points2[2][1], points2[3][1]))
+
+    # Применяем перспективное преобразование
+    transformed_image = cv2.warpPerspective(image, matrix_convert, (width, height))
+
+    return transformed_image
